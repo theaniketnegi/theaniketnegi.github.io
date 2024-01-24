@@ -5,7 +5,9 @@ const Card = ({ title, cover_url, id }) => {
             <div className="max-w-sm flex flex-col rounded overflow-hidden group hover:-translate-y-1 hover:cursor-pointer bg-white/70 transition-transform duration-150 h-64">
                 <div className="flex items-center h-[220px]">
                     <img
-                        src={cover_url}
+                        src={`${
+                            import.meta.env.VITE_SB_PROJECT_URL
+                        }/storage/v1/object/public/covers/${cover_url}`}
                         className="object-cover h-full w-full"
                     />
                 </div>
