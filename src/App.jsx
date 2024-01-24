@@ -40,7 +40,6 @@ const App = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/blogs" element={<Blogs loading={loading} />} />
                 <Route path="/blogs/:id" element={<Blog blog={blog} />} />
-                <Route path="*" element={<Navigate to="/" />} />
             </Routes>
         </div>
     );
