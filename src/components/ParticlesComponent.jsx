@@ -23,10 +23,6 @@ const ParticlesComponent = () => {
     });
   }, []);
 
-  const particlesLoaded = (container) => {
-    console.log(container);
-  };
-
   const options = useMemo(
     () => ({
       background: {
@@ -99,7 +95,6 @@ const ParticlesComponent = () => {
       <Particles
         id="tsparticles"
 		className="h-full w-full -z-10 absolute"
-        particlesLoaded={particlesLoaded}
         options={options}
       />
     );
