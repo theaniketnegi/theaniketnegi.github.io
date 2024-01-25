@@ -1,7 +1,7 @@
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Blogs from './components/Blogs';
-import { Route, Routes, useMatch, Navigate } from 'react-router-dom';
+import { Route, Routes, useMatch } from 'react-router-dom';
 import { useBlogsValue, useBlogsDispatch } from './contexts/BlogsContext';
 import Blog from './components/Blog';
 import { createClient } from '@supabase/supabase-js';

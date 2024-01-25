@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const Blog = ({ blog }) => {
     if (!blog) return <div className="text-white">Loading...</div>;
     return (
@@ -17,14 +19,16 @@ const Blog = ({ blog }) => {
                     </div>
                     <div className="space-y-4 md:space-y-2">
                         <div className="text-3xl md:text-4xl font-bold text-white">
-                           {blog.title}
+                            {blog.title}
                         </div>
                         <div className="text-sm md:text-lg font-bold text-white">
                             Written on {new Date(blog.created_at).toUTCString()}
                         </div>
                     </div>
                     <div className="text-xl md:max-w-7xl md:text-2xl text-white">
-                        <pre className="font-sans whitespace-pre-wrap" >{blog.content}</pre>
+                        <pre className="font-sans whitespace-pre-wrap">
+                            {blog.content}
+                        </pre>
                     </div>
                 </div>
             )}
@@ -32,4 +36,7 @@ const Blog = ({ blog }) => {
     );
 };
 
+Blog.propTypes = {
+    blog: PropTypes.object,
+};
 export default Blog;

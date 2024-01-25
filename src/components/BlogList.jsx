@@ -1,4 +1,5 @@
 import Card from './Card';
+import PropTypes from 'prop-types';
 
 const BlogList = ({ blogs, loading }) => {
     if (loading)
@@ -21,6 +22,10 @@ const BlogList = ({ blogs, loading }) => {
             })}
         </div>
     );
+};
+BlogList.propTypes = {
+    blogs: PropTypes.array.isRequired,
+    loading: PropTypes.bool.isRequired,
 };
 
 export default BlogList;

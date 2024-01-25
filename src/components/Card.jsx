@@ -1,8 +1,13 @@
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 const Card = ({ title, cover_url, id }) => {
     return (
         <div className="rounded overflow-hidden group hover:-translate-y-1 hover:cursor-pointer bg-white/85 transition-transform duration-150 h-[275px] ">
-            <Link to={`${id}`} className="h-full flex flex-col justify-between ">
+            <Link
+                to={`${id}`}
+                className="h-full flex flex-col justify-between "
+            >
                 <div className="h-[220px]">
                     <img
                         src={`${
@@ -20,6 +25,12 @@ const Card = ({ title, cover_url, id }) => {
             </Link>
         </div>
     );
+};
+
+Card.propTypes = {
+    title: PropTypes.string.isRequired,
+    cover_url: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
 };
 
 export default Card;

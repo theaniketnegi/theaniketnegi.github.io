@@ -1,4 +1,5 @@
 import { createContext, useReducer, useContext } from 'react';
+import PropTypes from 'prop-types';
 
 const BlogsReducer = (state, action) => {
     switch (action.type) {
@@ -17,6 +18,10 @@ export const BlogsContextProvider = (props) => {
             {props.children}
         </BlogsContext.Provider>
     );
+};
+
+BlogsContextProvider.propTypes = {
+    children: PropTypes.node,
 };
 
 export const useBlogsValue = () => {

@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const Pagination = ({ blogsPerPage, totalBlogs, paginate }) => {
     const pageNumbers = [];
 
@@ -20,6 +22,12 @@ const Pagination = ({ blogsPerPage, totalBlogs, paginate }) => {
             </ul>
         </nav>
     );
+};
+
+Pagination.propTypes = {
+    blogsPerPage: PropTypes.number.isRequired,
+    totalBlogs: PropTypes.number.isRequired,
+    paginate: PropTypes.func.isRequired,
 };
 
 export default Pagination;
