@@ -8,12 +8,17 @@ const BlogList = ({ blogs, loading }) => {
             </div>
         );
     return (
-		
-        <div className="grid grid-cols-4 text-2xl gap-12 w-full auto-cols-min text-white">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 text-2xl gap-12 w-full text-white">
             {blogs.map((blog) => {
-                return <Card key={blog.id} id={blog.id} title={blog.title} cover_url={blog.cover_url} />;
+                return (
+                    <Card
+                        key={blog.id}
+                        id={blog.id}
+                        title={blog.title}
+                        cover_url={blog.cover_url}
+                    />
+                );
             })}
-            
         </div>
     );
 };

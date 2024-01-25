@@ -1,7 +1,7 @@
-const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
+const Pagination = ({ blogsPerPage, totalBlogs, paginate }) => {
     const pageNumbers = [];
 
-    for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
+    for (let i = 1; i <= Math.ceil(totalBlogs / blogsPerPage); i++) {
         pageNumbers.push(i);
     }
 
@@ -10,9 +10,8 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
             <ul className="flex justify-center items-center">
                 {pageNumbers.map((number) => (
                     <a
-                        className="text-white border-2 border-white py-2 px-4 opacity-80 group hover:bg-white hover:text-[#151515] transition-colors duration-150"
+                        className="text-white border-2 cursor-pointer border-white py-2 px-4 opacity-80 group hover:bg-white hover:text-[#151515] transition-colors duration-150"
                         onClick={() => paginate(number)}
-                        href="#"
                         key={number}
                     >
                         <li>{number}</li>

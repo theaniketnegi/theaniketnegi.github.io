@@ -1,31 +1,30 @@
 const Blog = ({ blog }) => {
     if (!blog) return <div className="text-white">Loading...</div>;
-    console.log(blog);
     return (
         <>
             {blog && (
-                <div className="flex flex-col px-16 mt-24 w-full space-y-8">
-                    <div className="h-96 flex items-center max-w-[25rem]">
+                <div className="flex flex-col px-8 md:w-full md:px-16 mt-20 lg:mt-28 space-y-8 mb-8">
+                    <div className="flex max-w-sm md:max-w-md">
                         <img
                             src={`${
                                 import.meta.env.VITE_SB_PROJECT_URL
                             }/storage/v1/object/public/covers/${
                                 blog.cover_url
                             }`}
-                            className="object-cover w-[500px]"
+                            className="object-contain"
                             alt=""
                         />
                     </div>
-                    <div>
-                        <div className="text-4xl font-bold text-white">
-                            {blog.title}
+                    <div className="space-y-4 md:space-y-2">
+                        <div className="text-3xl md:text-4xl font-bold text-white">
+                           {blog.title}
                         </div>
-                        <div className="text-sm font-bold text-white">
+                        <div className="text-sm md:text-lg font-bold text-white">
                             Written on {new Date(blog.created_at).toUTCString()}
                         </div>
                     </div>
-                    <div className="text-2xl text-white">
-                        <pre className="font-sans">{blog.content}</pre>
+                    <div className="text-xl md:max-w-7xl md:text-2xl text-white">
+                        <pre className="font-sans whitespace-pre-wrap" >{blog.content}</pre>
                     </div>
                 </div>
             )}
